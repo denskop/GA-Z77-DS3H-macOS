@@ -1,0 +1,2 @@
+# SATA
+into device label SAT0 set_label begin SATA end;

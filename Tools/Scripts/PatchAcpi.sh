@@ -53,6 +53,16 @@ for ssdt in *; do
     mv "$ssdt" $(echo "$ssdt" | sed -e 's/-[0-9,_,x]*-/_/g')
 done
 
+# Remove ssdt tables
+rm SSDT_SataTabl.dsl
+
+## Patch acpi tables
+
+# DSDT
+
+# Dependencies
+$PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_Rename.txt
+
 ## Patch2 acpi tables
 
 $PATCH2 "$TEMP_PATH/Dsl/"MCFG.dsl "$ACPI_PATCHES_PATH/"MCFG.txt
