@@ -8,7 +8,13 @@
          location = "group:DSDT_Rename.txt">
       </FileRef>
       <FileRef
-         location = "group:DSDT_Errors.txt">
+         location = "group:DSDT_FixErrors.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_HideUseless.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_AppleSpecific.txt">
       </FileRef>
    </Group>
    <FileRef

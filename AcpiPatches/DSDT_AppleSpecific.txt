@@ -1,0 +1,22 @@
+# Add OSDW method
+into definitionblock code_regex . insert
+begin
+Method (OSDW, 0, NotSerialized)\n
+{\n
+    If (CondRefOf (_OSI, Local0))\n
+    {\n
+        If (_OSI ("Darwin"))\n
+        {\n
+            Return (One)\n
+        }\n
+        Else\n
+        {\n
+            Return (Zero)\n
+        }\n
+    }\n
+    Else\n
+    {\n
+        Return (Zero)\n
+    }\n
+}\n
+end;

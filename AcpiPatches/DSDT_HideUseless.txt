@@ -1,0 +1,2 @@
+# Remove SAT1 device
+into device label SAT1 remove_entry;
