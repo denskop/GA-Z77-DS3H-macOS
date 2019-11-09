@@ -1,2 +1,23 @@
 # Remove SAT1 device
 into device label SAT1 remove_entry;
+
+# Remove LID0 device
+into device label LID0 remove_entry;
+
+into all code_regex Notify\s\(\\_SB.LID0,\s0x80\) replace_matched
+begin
+// Removed
+end;
+
+# Remove DOCK device
+into device label _SB.PCI0.DOCK remove_entry;
+
+into all code_regex Notify\s\(\\_SB.PCI0.DOCK.* replace_matched
+begin
+// Removed
+end;
+
+into all code_regex Notify\s\(\\_SB.PCI0.DOCK.* replace_matched
+begin
+// Removed
+end;

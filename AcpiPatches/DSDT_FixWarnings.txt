@@ -1,0 +1,6 @@
+# Fix Mutex timeout
+into all code_regex Acquire\s\((.*),\s0x0FFF\) replace_matched
+begin
+Acquire (%1, 0xFFFF)
+end;
+

@@ -1,0 +1,2 @@
+Find: DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x00000012)
+Replace: DefinitionBlock ("", "DSDT", 3, "APPLE ", "iMac", 0x00310001)

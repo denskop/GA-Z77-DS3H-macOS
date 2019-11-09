@@ -20,3 +20,15 @@ Method (OSDW, 0, NotSerialized)\n
     }\n
 }\n
 end;
+
+# Add Darwin OSYS
+into method label _INI insert
+begin
+If (CondRefOf (_OSI, Local0))\n
+{\n
+    If (_OSI ("Darwin"))\n
+    {\n
+        OSYS = 0x2710\n
+    }\n
+}\n
+end;
