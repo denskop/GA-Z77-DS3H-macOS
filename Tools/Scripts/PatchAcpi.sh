@@ -38,8 +38,6 @@ $IASL -e SSDT*.aml -d DSDT.aml
 $IASL -d SSDT*.aml
 
 # Other tables
-$IASL -d APIC.aml
-$IASL -d HPET.aml
 $IASL -d MCFG.aml
 
 popd > /dev/null
@@ -54,5 +52,9 @@ pushd "$TEMP_PATH/Dsl" > /dev/null
 for ssdt in *; do
     mv "$ssdt" $(echo "$ssdt" | sed -e 's/-[0-9,_,x]*-/_/g')
 done
+
+## Patch2 acpi tables
+
+$PATCH2 "$TEMP_PATH/Dsl/"MCFG.dsl "$ACPI_PATCHES_PATH/"MCFG.txt
 
 popd > /dev/null

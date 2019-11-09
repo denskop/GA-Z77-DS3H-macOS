@@ -1,0 +1,19 @@
+# OEM ID
+Find: Oem ID : ""
+Replace: Oem ID : "APPLE "
+
+# Oem Table ID
+Find: Oem Table ID : ""
+Replace: Oem Table ID : "Apple00"
+
+# OEM Table Revision
+Find: Oem Revision : 01072009
+Replace: Oem Revision : 00000001
+
+# Compiler ID
+Find: Asl Compiler ID : "MSFT"
+Replace: Asl Compiler ID : "Loki"
+
+# Compiler Revision
+Find: Asl Compiler Revision : 00000097
+Replace: Asl Compiler Revision : 0000005F
