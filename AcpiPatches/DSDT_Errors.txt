@@ -1,0 +1,2 @@
+# Fix bad _HID PNP ID
+into all code_regex ABCDEFGH replace_matched begin ABCDEFFF end;

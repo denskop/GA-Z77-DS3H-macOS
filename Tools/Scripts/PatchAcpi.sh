@@ -60,6 +60,9 @@ rm SSDT_SataTabl.dsl
 
 # DSDT
 
+# Fix ACPI errors (Minimum set for compilation)
+$PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_FixErrors.txt
+
 # Dependencies
 $PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_Rename.txt
 

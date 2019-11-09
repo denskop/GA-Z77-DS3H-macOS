@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <FileRef
-      location = "group:DSDT_Rename.txt">
-   </FileRef>
+   <Group
+      location = "container:"
+      name = "DSDT">
+      <FileRef
+         location = "group:DSDT_Rename.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_Errors.txt">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:MCFG.txt">
    </FileRef>
