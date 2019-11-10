@@ -1,0 +1,24 @@
+# Add sleep button
+into scope label _SB insert
+begin
+Device (SLPB)\n
+{\n
+    Name (_HID, EisaId ("PNP0C0E"))\n
+}\n
+end;
+
+# Add SBUS devices
+into device label SBUS insert
+begin
+Device (BUS0)\n
+{\n
+    Name (_CID, "smbus")\n
+    Name (_ADR, 0x00)\n
+}\n
+\n
+Device (BUS1)\n
+{\n
+    Name (_CID, "smbus")\n
+    Name (_ADR, 0x01)\n
+}\n
+end;

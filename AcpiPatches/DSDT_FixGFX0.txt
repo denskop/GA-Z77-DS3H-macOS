@@ -1,0 +1,4 @@
+into device label GFX0 parent_label PEG0 replace_content
+begin
+Name (_ADR, Zero)\n
+end;

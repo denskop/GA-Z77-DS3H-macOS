@@ -1,3 +1,9 @@
+# Remove aliases
+into_all all code_regex Alias\s\(.*,\sSDGV\) replaceall_matched
+begin
+// Removed
+end;
+
 # Remove _UPC and _PLD
 into_all method label _UPC remove_entry;
 into_all method label _PLD remove_entry;
@@ -15,3 +21,54 @@ into_all device label PR15 set_label begin PRT5 end;
 into_all device label PR16 set_label begin PRT6 end;
 into_all device label PR17 set_label begin PRT7 end;
 into_all device label PR18 set_label begin PRT8 end;
+
+# Add Apple methods
+into device name_adr 0x001D0000 insert
+begin
+Method (_DSM, 4, NotSerialized)\n
+{\n
+    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
+    Return (Package()\n
+    {\n
+        "AAPL,current-available",\n
+        0x0834,\n
+        "AAPL,current-extra",\n
+        0x0A8C,\n
+        "AAPL,current-extra-in-sleep",\n
+        0x0A8C,\n
+        "AAPL,max-port-current-in-sleep",\n
+        0x0834,\n
+        "AAPL,device-internal",\n
+        0x02,\n
+        Buffer (0x01)\n
+        {\n
+             0x00\n
+        }\n
+    })\n
+}\n
+end;
+
+into device name_adr 0x001A0000 insert
+begin
+Method (_DSM, 4, NotSerialized)\n
+{\n
+    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
+    Return (Package()\n
+    {\n
+        "AAPL,current-available",\n
+        0x0834,\n
+        "AAPL,current-extra",\n
+        0x0A8C,\n
+        "AAPL,current-extra-in-sleep",\n
+        0x0A8C,\n
+        "AAPL,max-port-current-in-sleep",\n
+        0x0834,\n
+        "AAPL,device-internal",\n
+        0x02,\n
+        Buffer (0x01)\n
+        {\n
+             0x00\n
+        }\n
+    })\n
+}\n
+end;

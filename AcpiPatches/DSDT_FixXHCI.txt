@@ -13,3 +13,70 @@ into device label SSP1 remove_entry;
 into device label SSP2 remove_entry;
 into device label SSP3 remove_entry;
 into device label SSP4 remove_entry;
+
+# Cleanup XHCI methods
+into method label CUID remove_entry;
+into method label POSC remove_entry;
+into method label ESEL remove_entry;
+into all code_regex Name\s\(XRST,\sZero\) replace_matched
+begin
+// Removed
+end;
+
+# XHCI force select
+into method label XSEL replace_content
+begin
+XUSB = One\n
+Local0 = Zero\n
+Local0 = (PR3 & 0xFFFFFFF0)\n
+Local0 |= XHPM\n
+PR3 = (Local0 & PR3M)\n
+Local0 = Zero\n
+Local0 = (PR2 & 0xFFFFFFF0)\n
+Local0 |= XHPM\n
+PR2 = (Local0 & PR2M)\n
+end;
+
+into method label XWAK replace_content
+begin
+XWAK ()
+end;
+
+into device name_adr 0x00140000 insert
+begin
+Method (_INI, 0, NotSerialized)\n
+{\n
+    XSEL()\n
+}\n
+end;
+
+# Add Apple methods
+into device name_adr 0x00140000 insert
+begin
+Method (MBSD, 0, NotSerialized)\n
+{\n
+    Return (0x01)\n
+}\n
+\n
+Method (_DSM, 4, NotSerialized)\n
+{\n
+    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
+    Return (Package()\n
+    {\n
+        "AAPL,current-available",\n
+        0x0834,\n
+        "AAPL,current-extra",\n
+        0x0A8C,\n
+        "AAPL,current-extra-in-sleep",\n
+        0x0A8C,\n
+        "AAPL,max-port-current-in-sleep",\n
+        0x0834,\n
+        "AAPL,device-internal",\n
+        0x00,\n
+        Buffer (0x01)\n
+        {\n
+             0x00\n
+        }\n
+    })\n
+}\n
+end;

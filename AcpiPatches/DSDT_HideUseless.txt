@@ -9,6 +9,12 @@ begin
 // Removed
 end;
 
+# Hide B0D4 device
+into device label B0D4 insert
+begin
+Name (_STA, Zero)\n
+end;
+
 # Remove DOCK device
 into device label _SB.PCI0.DOCK remove_entry;
 
@@ -29,7 +35,6 @@ into scope label _SB.PCI0.LPCB.TPM remove_entry;
 into device label _SB.PCI0.ITPM remove_entry;
 into device label TPMX remove_entry;
 
-# Disable watchdog timer
 into device label CWDT remove_entry;
 into device label SIO1 remove_entry;
 into method label SIOS remove_entry;
@@ -76,3 +81,7 @@ into method label _L0E remove_entry;
 into method label _L20 remove_entry;
 into method label _L25 remove_entry;
 
+# Remove trash
+into scope label _SB.PCI0 code_regex ITPD remove_entry;
+into_all scope label _SB.PCI0.LPCB code_regex_not \s+ remove_entry;
+into_all scope label _SB code_regex_not \s+ remove_entry;

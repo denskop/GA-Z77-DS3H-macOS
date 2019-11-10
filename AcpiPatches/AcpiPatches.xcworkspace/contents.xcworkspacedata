@@ -8,6 +8,51 @@
          location = "group:DSDT_Rename.txt">
       </FileRef>
       <FileRef
+         location = "group:DSDT_FixGFX0.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_AddFakeEC.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixEHCI.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_RemoveDSM.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixIRQ.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixOSC.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixPNOT.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixPRW.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixSxStates.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixUID.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixWAK.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixWarnings.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_FixXHCI.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_Header_iMac.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_RemoveEC.txt">
+      </FileRef>
+      <FileRef
          location = "group:DSDT_FixErrors.txt">
       </FileRef>
       <FileRef
@@ -15,6 +60,9 @@
       </FileRef>
       <FileRef
          location = "group:DSDT_AppleSpecific.txt">
+      </FileRef>
+      <FileRef
+         location = "group:DSDT_AddOther.txt">
       </FileRef>
    </Group>
    <FileRef
