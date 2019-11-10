@@ -21,3 +21,58 @@ into all code_regex Notify\s\(\\_SB.PCI0.DOCK.* replace_matched
 begin
 // Removed
 end;
+
+# Remove TPM devices
+into device label _SB.PCI0.LPCB.TPM remove_entry;
+into scope label _SB.PCI0.LPCB.TPM remove_entry;
+
+into device label _SB.PCI0.ITPM remove_entry;
+into device label TPMX remove_entry;
+
+# Disable watchdog timer
+into device label CWDT remove_entry;
+into device label SIO1 remove_entry;
+into method label SIOS remove_entry;
+into method label SIOW remove_entry;
+
+into device label PS2K remove_entry;
+into device label PS2M remove_entry;
+into method label PS2K._PRW remove_entry;
+into method label PS2M._PRW remove_entry;
+
+into device label UAR1 remove_entry;
+
+into method label SIOH remove_entry;
+into all code_regex \\_SB.PCI0.LPCB.SIOH\s\(\) replace_matched
+begin
+// Removed
+end;
+
+into method label WAK code_regex \\_SB.PCI0.LPCB.SIOW.* replace_matched
+begin
+// Removed
+end;
+
+into method label PTS code_regex \\_SB.PCI0.LPCB.SIOS.* replace_matched
+begin
+// Removed
+end;
+
+# Remove USB devices
+into device label USB1 remove_entry;
+into device label USB2 remove_entry;
+into device label USB3 remove_entry;
+into device label USB4 remove_entry;
+into device label USB5 remove_entry;
+into device label USB6 remove_entry;
+into device label USB7 remove_entry;
+
+# Remove _Lx methods
+into method label _L03 remove_entry;
+into method label _L04 remove_entry;
+into method label _L05 remove_entry;
+into method label _L0C remove_entry;
+into method label _L0E remove_entry;
+into method label _L20 remove_entry;
+into method label _L25 remove_entry;
+

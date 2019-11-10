@@ -1,0 +1,19 @@
+# Remove current _UIDs
+into_all all code_regex Name\s\(_UID,\s((?:.)*)\) remove_matched;
+
+# Add PCI Root _UID
+into device name_hid PNP0A08 insert begin Name (_UID, Zero) end;
+
+# Add LNKx
+into device label LNKA insert begin Name (_UID, 0x1) end;
+into device label LNKB insert begin Name (_UID, 0x2) end;
+into device label LNKC insert begin Name (_UID, 0x3) end;
+into device label LNKD insert begin Name (_UID, 0x4) end;
+into device label LNKE insert begin Name (_UID, 0x5) end;
+into device label LNKF insert begin Name (_UID, 0x6) end;
+into device label LNKG insert begin Name (_UID, 0x7) end;
+into device label LNKH insert begin Name (_UID, 0x8) end;
+
+# Add other
+into device label LDRC insert begin Name (_UID, 0x2) end;
+into device label PDRC insert begin Name (_UID, 0x1) end;
