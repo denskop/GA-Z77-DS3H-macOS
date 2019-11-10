@@ -1,0 +1,22 @@
+# Fix Sx states
+into_all all code_regex Name.*_S((?:\d)).*\)[\S\s]+?\{\n\s+(.*)\n\s+(.*)[\S\s]+?\) replaceall_matched
+begin
+Name (\\_S%1, Package (0x03)\n
+{\n
+%2\n
+%3\n
+Zero\n
+})\n
+end;
+
+# Allow all Sx states
+into_all all code_regex If\s\(SS[0-5]\)\n\s+\{([\S\s]+?\}\))\n\s+\} replaceall_matched
+begin
+%1
+end;
+
+# Remove _S1 state
+into all code_regex Name.*_S1.*\)[\S\s]+?\) replace_matched
+begin
+// Removed
+end;

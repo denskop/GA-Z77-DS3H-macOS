@@ -1,0 +1,8 @@
+into method label GPRW code_regex Return\s\(PRWP\).* replace_matched
+begin
+if (OSDW() && (Arg0 == 0x0D))\n
+{\n
+    PRWP [One] = Zero\n
+}\n
+Return (PRWP)\n
+end;

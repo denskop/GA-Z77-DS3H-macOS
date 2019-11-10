@@ -1,0 +1,11 @@
+# Avoid PNP0C09 hid
+into all code_regex PNP0C09 replace_matched begin ECD0000 end;
+
+# Add fake EC device
+into scope label _SB.PCI0.LPCB insert
+begin
+Device (EC)\n
+{\n
+    Name (_HID, EisaId ("ECD0001"))\n
+}\n
+end;

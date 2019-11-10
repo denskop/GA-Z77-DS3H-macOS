@@ -1,0 +1,9 @@
+into_all method label PNOT code_regex  Sleep\s\(0x64\) replaceall_matched
+begin
+// Removed
+end;
+
+into_all method label MWAK insert
+begin
+PNOT()
+end;

@@ -1,0 +1,48 @@
+into all code_regex Name\s\(XCNT,\sZero\) replace_matched
+begin
+// Removed
+end;
+
+into method label _OSC replace_content
+begin
+Local0 = Arg3\n
+CreateDWordField (Local0, 0x00, CDW1)\n
+CreateDWordField (Local0, 0x04, CDW2)\n
+CreateDWordField (Local0, 0x08, CDW3)\n
+SUPP = CDW2\n
+CTRL = CDW3\n
+If ((0x01 == OSDW ()))\n
+{\n
+    If (((Arg0 == GUID) && NEXP))\n
+    {\n
+        If (~(CDW1 & 0x01))\n
+        {\n
+            If ((CTRL & 0x02))\n
+            {\n
+                NHPG ()\n
+            }\n
+            If ((CTRL & 0x04))\n
+            {\n
+                NPME ()\n
+            }\n
+        }\n
+        If ((Arg1 != One))\n
+        {\n
+            CDW1 |= 0x08\n
+        }\n
+        If ((CDW3 != CTRL))\n
+        {\n
+            CDW1 |= 0x10\n
+        }\n
+        CDW3 = CTRL\n
+        OSCC = CTRL\n
+        Return (Local0)\n
+    }\n
+    Else\n
+    {\n
+        CDW1 |= 0x04\n
+        Return (Local0)\n
+    }\n
+}\n
+Return (Local0)\n
+end;

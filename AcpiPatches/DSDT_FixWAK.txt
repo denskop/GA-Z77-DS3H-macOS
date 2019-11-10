@@ -1,0 +1,12 @@
+# Add stub MWAK
+into definitionblock code_regex . insert
+begin
+    Method (MWAK, 1, NotSerialized) {}\n
+end;
+
+# Fix _WAK and call MWAK
+into method label _WAK code_regex Return\s\(Package\s\(0x02\)\n replace_matched
+begin
+MWAK (Arg0)\n
+Return (Package (0x02)\n
+end;

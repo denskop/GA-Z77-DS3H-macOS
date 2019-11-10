@@ -12,3 +12,8 @@ into_all all code_regex GFX0 replaceall_matched begin IGPU end;
 into device label PEGP set_label begin GFX0 end;
 into scope label _SB.PCI0.PEG0.PEGP set_label begin _SB.PCI0.PEG0.GFX0 end;
 into_all all code_regex PEGP replaceall_matched begin GFX0 end;
+
+# XHC to XHC1
+into device label XHC set_label begin XHC1 end;
+into_all all code_regex XHC replaceall_matched begin XHC1 end;
+into_all all code_regex XHC1I replaceall_matched begin XHCI end;

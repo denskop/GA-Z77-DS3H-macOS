@@ -1,0 +1,38 @@
+# Remove useless EC (Embedded Controller)
+into device label H_EC remove_entry;
+
+# Remove ECON check
+into_all all code_regex If\s\(ECON\).*\n.*\n.*\n.*\}\n.*Else\n.*\n(.*)\n.*\} replaceall_matched
+begin
+%1
+end;
+
+# Remove more ECON checks
+into_all all code_regex If\s\(ECON\)[\S\s]+?\}\n.* replaceall_matched
+begin
+// Removed
+end;
+
+# Remove more ECON checks
+into method label _WAK code_regex If\s\(\(Arg0[\S\s]+?CFAN([\S\s]+?\}){3} replaceall_matched
+begin
+// Removed
+end;
+
+# Remove more ECON checks
+into method label _WAK code_regex If\s\(\(ECON([\S\s]+?\}){12} replaceall_matched
+begin
+// Removed
+end;
+
+# Remove more ECON checks
+into_all all code_regex If\s\(\(ECON([\S\s]+?\}){3} replaceall_matched
+begin
+// Removed
+end;
+
+# Remove more ECON checks
+into_all all code_regex If\s\(\(ECON([\S\s]+?\}){1} replaceall_matched
+begin
+// Removed
+end;
