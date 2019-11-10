@@ -1,0 +1,15 @@
+# Remove _UPC and _PLD
+into_all method label _UPC remove_entry;
+into_all method label _PLD remove_entry;
+
+# Rename ports
+into device label HSP1 set_label begin PRT1 end;
+into device label HSP2 set_label begin PRT2 end;
+into device label HSP3 set_label begin PRT3 end;
+into device label HSP4 set_label begin PRT4 end;
+
+# Remove useless ports
+into device label SSP1 remove_entry;
+into device label SSP2 remove_entry;
+into device label SSP3 remove_entry;
+into device label SSP4 remove_entry;

@@ -1,0 +1,17 @@
+# Remove _UPC and _PLD
+into_all method label _UPC remove_entry;
+into_all method label _PLD remove_entry;
+
+# Rename hubs
+into_all device label HUBN set_label begin RHUB end;
+
+# Rename ports
+into_all device label PR01 set_label begin PRT1 end;
+into_all device label PR11 set_label begin PRT1 end;
+into_all device label PR12 set_label begin PRT2 end;
+into_all device label PR13 set_label begin PRT3 end;
+into_all device label PR14 set_label begin PRT4 end;
+into_all device label PR15 set_label begin PRT5 end;
+into_all device label PR16 set_label begin PRT6 end;
+into_all device label PR17 set_label begin PRT7 end;
+into_all device label PR18 set_label begin PRT8 end;
