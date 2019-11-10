@@ -11,6 +11,9 @@
          location = "group:DSDT_FixGFX0.txt">
       </FileRef>
       <FileRef
+         location = "group:DSDT_AddBBN.txt">
+      </FileRef>
+      <FileRef
          location = "group:DSDT_AddFakeEC.txt">
       </FileRef>
       <FileRef
