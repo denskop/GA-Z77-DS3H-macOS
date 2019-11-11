@@ -85,6 +85,18 @@ into method label _L25 remove_entry;
 into scope label _SB.PCI0 code_regex ITPD remove_entry;
 into_all scope label _SB.PCI0.LPCB code_regex_not \s+ remove_entry;
 into_all scope label _SB code_regex_not \s+ remove_entry;
+into method label RDMA remove_entry;
+into method label NPTS remove_entry;
+into method label NWAK remove_entry;
+into all code_regex \\_SB.PCI0.NWAK.* replace_matched
+begin
+// Removed
+end;
+into all code_regex \\_SB.PCI0.NPTS.* replace_matched
+begin
+// Removed
+end;
+into scope label _SB.PCI0 code_regex .* remove_entry;
 
 # Remove extra PCI-E x1 ports
 into device name_adr 0x001C0004 remove_entry;
@@ -112,4 +124,16 @@ begin
 // Removed
 end;
 
+into_all method label AR08 remove_entry;
+into_all method label PR08 remove_entry;
+into_all method label AR09 remove_entry;
+into_all method label PR09 remove_entry;
+into_all method label AR0E remove_entry;
+into_all method label PR0E remove_entry;
+into_all method label AR0F remove_entry;
+into_all method label PR0F remove_entry;
 
+into_all all code_regex Name\s\([A,P]R0[8-9,E-F]([\S\s]+?\}){5} replaceall_matched
+begin
+// Replaced
+end;
