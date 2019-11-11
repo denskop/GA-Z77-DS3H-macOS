@@ -85,14 +85,85 @@
 		<key>KernelPm</key>
 		<false/>
 		<key>KextsToPatch</key>
-		<array/>
+		<array>
+			<dict>
+				<key>Comment</key>
+				<string>Override USB: port-count -&gt; port_count</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>cG9ydC1jb3VudAA=</data>
+				<key>MatchOS</key>
+				<string>10.11.x, 10.12.x, 10.13.x, 10.14.x, 10.15.x</string>
+				<key>Name</key>
+				<string>IOUSBHostFamily</string>
+				<key>Replace</key>
+				<data>cG9ydF9jb3VudAA=</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Override EHCI: ports -&gt; hub</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>cG9ydHMA</data>
+				<key>MatchOS</key>
+				<string>10.11.x, 10.12.x, 10.13.x, 10.14.x, 10.15.x</string>
+				<key>Name</key>
+				<string>AppleUSBEHCIPCI</string>
+				<key>Replace</key>
+				<data>aHViAAAA</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Override XHCI: ports -&gt; hub</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>cG9ydHMA</data>
+				<key>MatchOS</key>
+				<string>10.11.x, 10.12.x, 10.13.x, 10.14.x, 10.15.x</string>
+				<key>Name</key>
+				<string>AppleUSBXHCIPCI</string>
+				<key>Replace</key>
+				<data>aHViAAAA</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Override EHCI: disable MUX</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>a1VTQk11eEVuYWJsZWQA</data>
+				<key>MatchOS</key>
+				<string>10.11.x, 10.12.x, 10.13.x, 10.14.x, 10.15.x</string>
+				<key>Name</key>
+				<string>AppleUSBEHCIPCI</string>
+				<key>Replace</key>
+				<data>WFVTQk11eEVuYWJsZWQA</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Override XHCI: disable MUX</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>a1VTQk11eEVuYWJsZWQA</data>
+				<key>MatchOS</key>
+				<string>10.11.x, 10.12.x, 10.13.x, 10.14.x, 10.15.x</string>
+				<key>Name</key>
+				<string>AppleUSBXHCIPCI</string>
+				<key>Replace</key>
+				<data>WFVTQk11eEVuYWJsZWQA</data>
+			</dict>
+		</array>
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
 		<key>ProductName</key>
 		<string>iMac13,2</string>
 		<key>Trust</key>
-		<true/>
+		<false/>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
