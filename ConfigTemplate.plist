@@ -59,6 +59,105 @@
 	</dict>
 	<key>Devices</key>
 	<dict>
+		<key>Arbitrary</key>
+		<array>
+			<dict>
+				<key>Comment</key>
+				<string>Inject HDA properties</string>
+				<key>CustomProperties</key>
+				<array>
+					<dict>
+						<key>Key</key>
+						<string>alc-layout-id</string>
+						<key>Value</key>
+						<data>AQAAAA==</data>
+					</dict>
+					<dict>
+						<key>Key</key>
+						<string>layout-id</string>
+						<key>Value</key>
+						<data>BwAAAA==</data>
+					</dict>
+					<dict>
+						<key>Key</key>
+						<string>platformFamily</string>
+						<key>Value</key>
+						<data>AA==</data>
+					</dict>
+					<dict>
+						<key>Key</key>
+						<string>PinConfigurations</string>
+						<key>Value</key>
+						<data></data>
+					</dict>
+					<dict>
+						<key>Key</key>
+						<string>MaximumBootBeepVolume</string>
+						<key>Value</key>
+						<data>TQ==</data>
+					</dict>
+				</array>
+				<key>PciAddr</key>
+				<string>00:1B:00</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Inject Intel HD properties</string>
+				<key>CustomProperties</key>
+				<array>
+					<dict>
+						<key>Key</key>
+						<string>AAPL,ig-platform-id</string>
+						<key>Value</key>
+						<data>BwBiAQ==</data>
+					</dict>
+				</array>
+				<key>PciAddr</key>
+				<string>00:02:00</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Inject Wi-Fi properties</string>
+				<key>CustomProperties</key>
+				<array>
+					<dict>
+						<key>Key</key>
+						<string>built-in</string>
+						<key>Value</key>
+						<data>AA==</data>
+					</dict>
+				</array>
+				<key>PciAddr</key>
+				<string>03:00:00</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Inject LAN properties</string>
+				<key>CustomProperties</key>
+				<array>
+					<dict>
+						<key>Key</key>
+						<string>built-in</string>
+						<key>Value</key>
+						<data>AA==</data>
+					</dict>
+					<dict>
+						<key>Key</key>
+						<string>name</string>
+						<key>Value</key>
+						<string>ethernet</string>
+					</dict>
+					<dict>
+						<key>Key</key>
+						<string>IOName</string>
+						<key>Value</key>
+						<string>ethernet</string>
+					</dict>
+				</array>
+				<key>PciAddr</key>
+				<string>04:00:00</string>
+			</dict>
+		</array>
 		<key>Audio</key>
 		<dict>
 			<key>Inject</key>
