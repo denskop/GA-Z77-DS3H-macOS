@@ -63,6 +63,25 @@
 		<key>smartUPS</key>
 		<false/>
 	</dict>
+	<key>Boot</key>
+	<dict>
+		<key>Arguments</key>
+		<string>watchdog=0</string>
+		<key>DefaultVolume</key>
+		<string>LastBootedVolume</string>
+		<key>DisableCloverHotkeys</key>
+		<false/>
+		<key>Fast</key>
+		<false/>
+		<key>RtcHibernateAware</key>
+		<true/>
+		<key>SignatureFixup</key>
+		<true/>
+		<key>Timeout</key>
+		<integer>-1</integer>
+		<key>XMPDetection</key>
+		<string>-1</string>
+	</dict>
 	<key>Devices</key>
 	<dict>
 		<key>Arbitrary</key>
