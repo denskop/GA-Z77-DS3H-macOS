@@ -7,3 +7,4 @@ SCRIPTS_PATH="$TOOLS_PATH/Scripts"
 
 ## ACPI
 source "$SCRIPTS_PATH/PatchAcpi.sh"
+source "$SCRIPTS_PATH/ConstructAcpi.sh"

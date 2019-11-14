@@ -97,4 +97,15 @@ $PATCH "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_HideUseless.txt
 $PATCH2 "$TEMP_PATH/Dsl/"MCFG.dsl "$ACPI_PATCHES_PATH/"MCFG.txt
 $PATCH2 "$TEMP_PATH/Dsl/"DSDT.dsl "$ACPI_PATCHES_PATH/"DSDT_Header_iMac.txt
 
+## Compile acpi tables
+
+$IASL -I "$TEMP_PATH/Dsl/" -ve "$TEMP_PATH/Dsl/DSDT.dsl"
+$IASL -I "$TEMP_PATH/Dsl/" -ve "$TEMP_PATH/Dsl/MCFG.dsl"
+
+pushd "$ACPI_EXTRA_PATH" > /dev/null
+
+for file in *; do
+    $IASL -I "$TEMP_PATH/Dsl/" -ve "$file"
+done
+
 popd > /dev/null
