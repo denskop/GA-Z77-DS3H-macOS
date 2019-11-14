@@ -4,7 +4,7 @@ DefinitionBlock ("", "SSDT", 1, "PmRef", "Cpu0Ist", 0x00003000)
 
     Scope (\_PR.CPU0)
     {
-        Name (APSS, Package (0x30)
+        Name (APSS, Package ()
         {
             /* CPU Workaround #1 */
             Package (0x06) { 0x0ED9, 0x012CC8, 0x0A, 0x0A, 0x2700, 0x2700 },
