@@ -5,6 +5,9 @@
       location = "container:"
       name = "DSDT">
       <FileRef
+         location = "group:Obsolete">
+      </FileRef>
+      <FileRef
          location = "group:DSDT_Rename.txt">
       </FileRef>
       <FileRef
@@ -30,9 +33,6 @@
       </FileRef>
       <FileRef
          location = "group:DSDT_FixPNOT.txt">
-      </FileRef>
-      <FileRef
-         location = "group:DSDT_FixPRW.txt">
       </FileRef>
       <FileRef
          location = "group:DSDT_FixSxStates.txt">

@@ -17,3 +17,7 @@ into_all all code_regex PEGP replaceall_matched begin GFX0 end;
 into device label XHC set_label begin XHC1 end;
 into_all all code_regex XHC replaceall_matched begin XHC1 end;
 into_all all code_regex XHC1I replaceall_matched begin XHCI end;
+
+# RP03.PXSX to PR03.GIGE
+into device label PXSX parent_adr 0x001C0002 set_label begin GIGE end;
+into method label HPME parent_adr 0x001C0002 code_regex PXSX replace_matched begin GIGE end;

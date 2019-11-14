@@ -22,3 +22,12 @@ Device (BUS1)\n
     Name (_ADR, 0x01)\n
 }\n
 end;
+
+# Add MCHC device
+into device label PCI0 insert
+begin
+Device (MCHC)\n
+{\n
+    Name (_ADR, Zero)\n
+}\n
+end;
