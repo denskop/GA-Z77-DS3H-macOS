@@ -34,6 +34,12 @@
 				<key>Signature</key>
 				<string>MCFG</string>
 			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>SataTabl</string>
+			</dict>
 		</array>
 		<key>HaltEnabler</key>
 		<true/>
